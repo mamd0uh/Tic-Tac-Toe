@@ -1,0 +1,68 @@
+:root{
+--gray-lighter: #f7f7f7;
+--gray-light: #dbdbdd;
+--gray-dark: #aeafb3;
+--gray-darker: #454547;
+--pink: #e89d93;
+--yellow: #eec71a;
+--cell-size: 150px;
+--mark-size: calc(var(--cell-size)*-.9)
+}
+
+* {
+  box-sizing: border-box;
+} 
+
+body {
+  margin: 0;
+  height: 100vh;
+  width: 100vw;
+  background: powderblue;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  justify-items: center;
+}
+
+.board {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  justify-items: center;
+  align-items: center;
+  grid-template-columns: repeat(3, auto);
+}
+
+.square {
+  border: 5px solid #454547;
+  width: var(--cell-size);
+  height: var(--cell-size);
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  font-size: 75px; 
+  color: #f7f7f7;
+}
+
+.square:nth-child(1n+1) {
+  border-top: none;
+  border-left: none;
+}
+
+.square:nth-child(1n+7) {
+  border-bottom: none;
+}
+
+.square:nth-child(3n+3) {
+  border-right: none;
+}
+
+.square:hover {
+  background: #e89d93;
+  opacity: 100%;
+
+}
