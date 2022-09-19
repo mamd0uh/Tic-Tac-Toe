@@ -57,13 +57,14 @@ I chose this game because it is both entertaining and minimalist, and because it
 
 The following techniques were used  were used in the making of this game:
 
-1. Javascript functions
-2. Iterating through an array using for loops
-3. DOM manipulation
-4. Flexbox
-5. Grid
-6. HTML
-7. CSS
+* Javascript
+  * Javascript functions
+  * Iterating through an array using for loops
+  * DOM manipulation
+  * Flexbox
+  * Grid
+* HTML
+* CSS
 
 ## Link to the Game
 
