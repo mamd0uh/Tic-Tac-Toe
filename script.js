@@ -3,12 +3,16 @@ let squares = [];
 let winningMessageTextElement = document.querySelector("[data-winning-message-text]");
 let winningMessageElement = document.getElementById("winningMessage");
 
+
+    // EventListener to refresh the page when the reset button is clicked
 window.addEventListener("load", (event) => {
   document.getElementById("resetButton").onclick = function () {
     location.reload(true);
   };
 });
 
+
+    // Created a function to check for a winner. Function also changes the background color of the winning squares and shows the winning message
 function finalWinner(num1, num2, num3) {
   winningMessageTextElement.innerText = `${squares[num1]} is the Winner`;
   document.getElementById("item" + num1).style.background = "#e89d93";
@@ -17,17 +21,20 @@ function finalWinner(num1, num2, num3) {
   winningMessageElement.classList.add("show");
 }
 
+    // Created a function to give a message if it's a draw.
 function isDraw() {
   winningMessageTextElement.innerText = "It's a DRAW!!";
   winningMessageElement.classList.add("show");
 }
 
+
+    // Created a function iterating through an array using for loops with the winning conditions and draw if otherwise
 function winner() {
-  for (let i = 1; i < 10; i++) {
+  for (let i = 1; i < 10; i++) {    // For loop iterating through the 9 squares
     squares[i] = document.getElementById("item" + i).innerHTML;
   }
 
-  if (
+  if ( //Winning Conditions
     squares[1] == squares[2] &&
     squares[2] == squares[3] &&
     squares[3] != ""
@@ -75,18 +82,19 @@ function winner() {
     squares[1] != ""
   ) {
     finalWinner(1, 5, 9);
-  } else if (squares.every((element) => element != "")) {
+  } else if (squares.every((element) => element != "")) { // If none of the winning conditions is met, a draw will be conducted 
     isDraw();
   }
 }
 
+    // Function for how the game is played and to switch turns
 function game(id) {
   let element = document.getElementById(id);
-  if (turn === "x" && element.innerHTML == "") {
-    element.innerHTML = "X";
-    turn = "o";
-    title.innerHTML = "O's Turn";
-    element.style.cursor = "not-allowed";
+  if (turn === "x" && element.innerHTML == "") {    //Gives the user the turn if the square is empty
+    element.innerHTML = "X";    // X will be applied inside the square
+    turn = "o";     // Switches the turn
+    title.innerHTML = "O's Turn";   // Gives a message for users turn
+    element.style.cursor = "not-allowed"; // Changes the cursos style 
   } else if (turn === "o" && element.innerHTML == "") {
     element.innerHTML = "O";
     turn = "x";
