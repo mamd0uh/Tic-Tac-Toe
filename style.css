@@ -13,6 +13,21 @@
   box-sizing: border-box;
 } 
 
+h1 {
+  color:#454547;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.title {
+  color: #eec71a;
+  background:#2c2c2d;
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  font-size: 25px; 
+  font-family: system-ui;
+}
+
 body {
   margin: 0;
   height: 100vh;
@@ -24,9 +39,12 @@ body {
   justify-content: center;
   align-content: center;
   justify-items: center;
+  
 }
 
 .board {
+  padding: 5px;
+  margin: 5px;
   display: grid;
   justify-content: center;
   align-content: center;
@@ -46,6 +64,7 @@ body {
   position: relative;
   font-size: 75px; 
   color: #f7f7f7;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
 }
 
 .square:nth-child(1n+1) {
@@ -65,4 +84,40 @@ body {
   background: #e89d93;
   opacity: 100%;
 
+}
+
+.winning-message {
+  position: fixed;
+  display: none;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.9);
+  justify-content: center;
+  align-items: center;
+  color: #eec71a;
+  font-size: 4rem;
+  flex-direction: column;
+  gap: 10px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.winning-message button {
+  font-size: 3rem;
+  background-color: white;
+  border: 1px;
+  padding: .25em .5em;
+  cursor: pointer;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+}
+
+.winning-message button:hover {
+  background-color: #aeafb3;
+  color: white;
+  border-color: white;
+}
+
+.winning-message.show {
+  display: flex;
 }
